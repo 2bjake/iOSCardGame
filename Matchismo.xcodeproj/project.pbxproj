@@ -13,6 +13,10 @@
 		73E50BD31D906A9800C18C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E50BD11D906A9800C18C2F /* Main.storyboard */; };
 		73E50BD51D906A9800C18C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E50BD41D906A9800C18C2F /* Assets.xcassets */; };
 		73E50BD81D906A9800C18C2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E50BD61D906A9800C18C2F /* LaunchScreen.storyboard */; };
+		73E50BE21D90765F00C18C2F /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BE11D90765F00C18C2F /* Card.m */; };
+		73E50BE51D90766900C18C2F /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BE41D90766900C18C2F /* PlayingCard.m */; };
+		73E50BE81D90767100C18C2F /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BE71D90767100C18C2F /* Deck.m */; };
+		73E50BEB1D90767B00C18C2F /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BEA1D90767B00C18C2F /* PlayingCardDeck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		73E50BD41D906A9800C18C2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73E50BD71D906A9800C18C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73E50BD91D906A9800C18C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E50BE01D90765F00C18C2F /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		73E50BE11D90765F00C18C2F /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		73E50BE31D90766900C18C2F /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		73E50BE41D90766900C18C2F /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		73E50BE61D90767100C18C2F /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		73E50BE71D90767100C18C2F /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		73E50BE91D90767B00C18C2F /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
+		73E50BEA1D90767B00C18C2F /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 		73E50BC71D906A9800C18C2F /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				73E50BDF1D90764900C18C2F /* Model */,
 				73E50BCB1D906A9800C18C2F /* AppDelegate.h */,
 				73E50BCC1D906A9800C18C2F /* AppDelegate.m */,
 				73E50BCE1D906A9800C18C2F /* ViewController.h */,
@@ -77,6 +90,21 @@
 				73E50BC91D906A9800C18C2F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73E50BDF1D90764900C18C2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73E50BE01D90765F00C18C2F /* Card.h */,
+				73E50BE11D90765F00C18C2F /* Card.m */,
+				73E50BE31D90766900C18C2F /* PlayingCard.h */,
+				73E50BE41D90766900C18C2F /* PlayingCard.m */,
+				73E50BE61D90767100C18C2F /* Deck.h */,
+				73E50BE71D90767100C18C2F /* Deck.m */,
+				73E50BE91D90767B00C18C2F /* PlayingCardDeck.h */,
+				73E50BEA1D90767B00C18C2F /* PlayingCardDeck.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +180,10 @@
 				73E50BD01D906A9800C18C2F /* ViewController.m in Sources */,
 				73E50BCD1D906A9800C18C2F /* AppDelegate.m in Sources */,
 				73E50BCA1D906A9800C18C2F /* main.m in Sources */,
+				73E50BE51D90766900C18C2F /* PlayingCard.m in Sources */,
+				73E50BEB1D90767B00C18C2F /* PlayingCardDeck.m in Sources */,
+				73E50BE81D90767100C18C2F /* Deck.m in Sources */,
+				73E50BE21D90765F00C18C2F /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
