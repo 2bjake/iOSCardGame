@@ -17,6 +17,7 @@
 		73E50BE51D90766900C18C2F /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BE41D90766900C18C2F /* PlayingCard.m */; };
 		73E50BE81D90767100C18C2F /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BE71D90767100C18C2F /* Deck.m */; };
 		73E50BEB1D90767B00C18C2F /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BEA1D90767B00C18C2F /* PlayingCardDeck.m */; };
+		73E50BEE1D90CFFC00C18C2F /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BED1D90CFFC00C18C2F /* CardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		73E50BE71D90767100C18C2F /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		73E50BE91D90767B00C18C2F /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
 		73E50BEA1D90767B00C18C2F /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		73E50BEC1D90CFFC00C18C2F /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		73E50BED1D90CFFC00C18C2F /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				73E50BE71D90767100C18C2F /* Deck.m */,
 				73E50BE91D90767B00C18C2F /* PlayingCardDeck.h */,
 				73E50BEA1D90767B00C18C2F /* PlayingCardDeck.m */,
+				73E50BEC1D90CFFC00C18C2F /* CardMatchingGame.h */,
+				73E50BED1D90CFFC00C18C2F /* CardMatchingGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				73E50BCD1D906A9800C18C2F /* AppDelegate.m in Sources */,
 				73E50BCA1D906A9800C18C2F /* main.m in Sources */,
 				73E50BE51D90766900C18C2F /* PlayingCard.m in Sources */,
+				73E50BEE1D90CFFC00C18C2F /* CardMatchingGame.m in Sources */,
 				73E50BEB1D90767B00C18C2F /* PlayingCardDeck.m in Sources */,
 				73E50BE81D90767100C18C2F /* Deck.m in Sources */,
 				73E50BE21D90765F00C18C2F /* Card.m in Sources */,
@@ -332,6 +338,7 @@
 				73E50BDE1D906A9800C18C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
