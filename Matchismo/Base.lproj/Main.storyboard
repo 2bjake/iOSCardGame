@@ -24,7 +24,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nfd-rd-XIO"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="186-89-rrA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MW-2N-nth">
@@ -34,7 +34,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efJ-mq-pxy"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Uv-Oa-Ddl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDW-Ke-qqc">
@@ -44,7 +44,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nyN-q7-xYu"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lAf-Rd-LsF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gS-S3-Ni3">
@@ -54,7 +54,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9GG-iH-PnL"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9RD-wt-ga8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjd-nr-mma">
@@ -64,7 +64,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bAJ-tf-4pr"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysk-ea-eu2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDT-fR-99U">
@@ -74,7 +74,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zPZ-XI-lbY"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1mD-5K-yVZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDE-jW-gEt">
@@ -84,7 +84,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Yv-ri-w7o"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1tN-pQ-uYL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-Hw-C0a">
@@ -94,7 +94,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PqX-iz-iCZ"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egU-at-pXq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2q-lu-g3z">
@@ -104,7 +104,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4s5-7y-2jr"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sis-Lr-kYP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSM-an-HEB">
@@ -114,7 +114,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z1t-uB-Ndb"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W3A-XW-ncp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5O-tx-NAd">
@@ -124,7 +124,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sjb-NY-3OW"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jg9-c6-RNR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezt-Sm-uNd">
@@ -134,12 +134,33 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cardButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EyM-U6-kUf"/>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGV-FG-C92"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whp-Vy-xpG">
+                                <rect key="frame" x="20" y="559" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="Whp-Vy-xpG" id="rcc-FX-a2q"/>
+                        <outletCollection property="cardButtons" destination="p2q-lu-g3z" id="DXZ-8O-0k5"/>
+                        <outletCollection property="cardButtons" destination="FSM-an-HEB" id="CQq-0R-Ypg"/>
+                        <outletCollection property="cardButtons" destination="d5O-tx-NAd" id="5q0-yJ-iIf"/>
+                        <outletCollection property="cardButtons" destination="ezt-Sm-uNd" id="Ans-TK-0Ib"/>
+                        <outletCollection property="cardButtons" destination="Mjd-nr-mma" id="Yc1-nG-uzh"/>
+                        <outletCollection property="cardButtons" destination="DDT-fR-99U" id="Quw-pT-qbi"/>
+                        <outletCollection property="cardButtons" destination="H4X-j7-ZFv" id="zkt-XK-obz"/>
+                        <outletCollection property="cardButtons" destination="PDE-jW-gEt" id="sPk-kf-nQT"/>
+                        <outletCollection property="cardButtons" destination="rXw-Hw-C0a" id="oGi-ag-mr2"/>
+                        <outletCollection property="cardButtons" destination="2MW-2N-nth" id="7bX-Rm-iMI"/>
+                        <outletCollection property="cardButtons" destination="lDW-Ke-qqc" id="rtD-sK-uvu"/>
+                        <outletCollection property="cardButtons" destination="6gS-S3-Ni3" id="Wld-Mk-fkd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
