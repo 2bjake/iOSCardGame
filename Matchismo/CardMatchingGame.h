@@ -20,5 +20,7 @@
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) NSInteger score;
-
+@property (readonly, getter=isStarted) BOOL started;
+@property (nonatomic) NSUInteger matchCount;
+@property (nonatomic, readonly) NSString *lastStatus;
 @end

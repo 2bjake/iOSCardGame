@@ -54,6 +54,14 @@
         } else if ([otherCard.suit isEqualToString:self.suit]){
             score = 1;
         }
+    } else if (otherCards.count == 2) {
+        PlayingCard *firstCard = otherCards.firstObject;
+        PlayingCard *secondCard = otherCards.lastObject;
+        
+        int matchScore = [self match:@[firstCard]];
+        matchScore += [self match:@[secondCard]];
+        matchScore += [firstCard match:@[secondCard]];
+        return matchScore;
     }
     
     return score;
