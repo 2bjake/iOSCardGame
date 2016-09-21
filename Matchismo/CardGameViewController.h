@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Deck;
 
 @interface CardGameViewController : UIViewController
-
-
+- (Deck *)createDeck; //abstract, subclass must implement
 @end
 

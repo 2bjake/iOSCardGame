@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		735C85F11D9317BD00788F85 /* PlayingCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C85F01D9317BD00788F85 /* PlayingCardGameViewController.m */; };
 		73E50BCA1D906A9800C18C2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BC91D906A9800C18C2F /* main.m */; };
 		73E50BCD1D906A9800C18C2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BCC1D906A9800C18C2F /* AppDelegate.m */; };
 		73E50BD01D906A9800C18C2F /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BCF1D906A9800C18C2F /* CardGameViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		735C85EF1D9317BD00788F85 /* PlayingCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardGameViewController.h; sourceTree = "<group>"; };
+		735C85F01D9317BD00788F85 /* PlayingCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardGameViewController.m; sourceTree = "<group>"; };
 		73E50BC51D906A9800C18C2F /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E50BC91D906A9800C18C2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73E50BCB1D906A9800C18C2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				73E50BD61D906A9800C18C2F /* LaunchScreen.storyboard */,
 				73E50BD91D906A9800C18C2F /* Info.plist */,
 				73E50BC81D906A9800C18C2F /* Supporting Files */,
+				735C85EF1D9317BD00788F85 /* PlayingCardGameViewController.h */,
+				735C85F01D9317BD00788F85 /* PlayingCardGameViewController.m */,
 			);
 			path = Matchismo;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				73E50BEB1D90767B00C18C2F /* PlayingCardDeck.m in Sources */,
 				73E50BE81D90767100C18C2F /* Deck.m in Sources */,
 				73E50BE21D90765F00C18C2F /* Card.m in Sources */,
+				735C85F11D9317BD00788F85 /* PlayingCardGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
