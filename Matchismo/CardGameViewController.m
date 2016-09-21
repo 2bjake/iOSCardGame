@@ -1,16 +1,16 @@
 //
-//  ViewController.m
+//  CardGameViewController.m
 //  Matchismo
 //
 //  Created by Foster, Jake on 9/19/16.
 //  Copyright © 2016 Amazon. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CardGameViewController.h"
 #import "CardMatchingGame.h"
 #import "PlayingCardDeck.h"
 
-@interface ViewController ()
+@interface CardGameViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 @property (strong, nonatomic) IBOutlet UISwitch *matchCountSwitch;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
@@ -18,7 +18,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
-@implementation ViewController
+@implementation CardGameViewController
 
 - (CardMatchingGame *)game {
     if (!_game) [self resetGame];

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		73E50BCA1D906A9800C18C2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BC91D906A9800C18C2F /* main.m */; };
 		73E50BCD1D906A9800C18C2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BCC1D906A9800C18C2F /* AppDelegate.m */; };
-		73E50BD01D906A9800C18C2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BCF1D906A9800C18C2F /* ViewController.m */; };
+		73E50BD01D906A9800C18C2F /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E50BCF1D906A9800C18C2F /* CardGameViewController.m */; };
 		73E50BD31D906A9800C18C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E50BD11D906A9800C18C2F /* Main.storyboard */; };
 		73E50BD51D906A9800C18C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E50BD41D906A9800C18C2F /* Assets.xcassets */; };
 		73E50BD81D906A9800C18C2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E50BD61D906A9800C18C2F /* LaunchScreen.storyboard */; };
@@ -25,8 +25,8 @@
 		73E50BC91D906A9800C18C2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73E50BCB1D906A9800C18C2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73E50BCC1D906A9800C18C2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		73E50BCE1D906A9800C18C2F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		73E50BCF1D906A9800C18C2F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		73E50BCE1D906A9800C18C2F /* CardGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardGameViewController.h; sourceTree = "<group>"; };
+		73E50BCF1D906A9800C18C2F /* CardGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardGameViewController.m; sourceTree = "<group>"; };
 		73E50BD21D906A9800C18C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73E50BD41D906A9800C18C2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73E50BD71D906A9800C18C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 				73E50BDF1D90764900C18C2F /* Model */,
 				73E50BCB1D906A9800C18C2F /* AppDelegate.h */,
 				73E50BCC1D906A9800C18C2F /* AppDelegate.m */,
-				73E50BCE1D906A9800C18C2F /* ViewController.h */,
-				73E50BCF1D906A9800C18C2F /* ViewController.m */,
+				73E50BCE1D906A9800C18C2F /* CardGameViewController.h */,
+				73E50BCF1D906A9800C18C2F /* CardGameViewController.m */,
 				73E50BD11D906A9800C18C2F /* Main.storyboard */,
 				73E50BD41D906A9800C18C2F /* Assets.xcassets */,
 				73E50BD61D906A9800C18C2F /* LaunchScreen.storyboard */,
@@ -182,7 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E50BD01D906A9800C18C2F /* ViewController.m in Sources */,
+				73E50BD01D906A9800C18C2F /* CardGameViewController.m in Sources */,
 				73E50BCD1D906A9800C18C2F /* AppDelegate.m in Sources */,
 				73E50BCA1D906A9800C18C2F /* main.m in Sources */,
 				73E50BE51D90766900C18C2F /* PlayingCard.m in Sources */,
