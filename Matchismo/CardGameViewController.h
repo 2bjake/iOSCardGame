@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Deck;
+@class CardMatchingGame;
+@class Card;
+
 
 @interface CardGameViewController : UIViewController
-- (Deck *)createDeck; //abstract, subclass must implement
+
+@property (nonatomic, readonly) NSUInteger cardCount;
+
+- (CardMatchingGame *)createGame; //abstract, subclass must implement
+- (void)drawCard:(Card *)card onButton:(UIButton *)button; //abstract, subclass must implement
+- (void)updateUI;
+
 @end
 

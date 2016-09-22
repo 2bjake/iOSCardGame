@@ -12,7 +12,6 @@
 
 @interface CardGameViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
-@property (strong, nonatomic) IBOutlet UISwitch *matchCountSwitch;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
@@ -21,17 +20,17 @@
 @implementation CardGameViewController
 
 - (CardMatchingGame *)game {
-    if (!_game) [self resetGame];
+    if (!_game) {
+        _game = [self createGame];
+    }
     return _game;
 }
 
 - (void)resetGame {
-    _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count withDeck:[self createDeck]];
-    [self setMatchCountToThree:self.matchCountSwitch.isOn];
-    
+    _game = [self createGame];
 }
 
-- (Deck*)createDeck {
+- (CardMatchingGame *)createGame { //abstract
     return nil;
 }
 
@@ -41,28 +40,19 @@
     [self updateUI];
 }
 
+- (void)drawCard:(Card *)card onButton:(UIButton *)button {
+    //abstract
+}
+
 - (void)updateUI {
     for (int i = 0; i < self.cardButtons.count; i++) {
         Card *card = [self.game cardAtIndex:i];
         UIButton *button = self.cardButtons[i];
-        
-        [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
-        [button setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
-        
-        button.enabled = !card.isMatched;
-        self.matchCountSwitch.enabled = !self.game.started;
+        [self drawCard:card onButton:button];
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
     self.statusLabel.text = self.game.lastStatus;
-}
-
-- (NSString *)titleForCard:(Card *)card {
-    return (card.isChosen) ? card.contents : @"";
-}
-
-- (UIImage *)backgroundImageForCard:(Card *)card {
-    return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
 
 - (IBAction)touchResetButton:(UIButton *)sender {
@@ -70,15 +60,8 @@
     [self updateUI];
 }
 
-- (void)setMatchCountToThree:(BOOL)toThree {
-    if (toThree) {
-        self.game.matchCount = 3;
-    } else {
-        self.game.matchCount = 2;
-    }
+- (NSUInteger)cardCount {
+    return self.cardButtons.count;
 }
 
-- (IBAction)toggleMatchSwitch:(UISwitch *)sender {
-    [self setMatchCountToThree:sender.isOn];
-}
 @end
