@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Playing Card Game-->
+        <!--Playing Card Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whp-Vy-xpG">
+                                <rect key="frame" x="28" y="522" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-zp-On7">
                                 <rect key="frame" x="504" y="513" width="84" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,7 +35,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vJD-qt-ddS">
-                                <rect key="frame" x="112" y="20" width="376" height="60"/>
+                                <rect key="frame" x="112" y="84" width="376" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KY-Sh-K1E">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
@@ -146,7 +152,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dkq-Du-WIQ">
-                                <rect key="frame" x="112" y="88" width="376" height="60"/>
+                                <rect key="frame" x="112" y="152" width="376" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDQ-xT-haM">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
@@ -263,7 +269,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3P0-0Q-JAF">
-                                <rect key="frame" x="112" y="156" width="376" height="60"/>
+                                <rect key="frame" x="112" y="220" width="376" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-Dp-Wok">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
@@ -379,14 +385,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whp-Vy-xpG">
-                                <rect key="frame" x="20" y="517" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJA-Lq-g2h">
-                                <rect key="frame" x="20" y="475" width="405" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXF-90-ea3">
+                                <rect key="frame" x="28" y="492" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -396,20 +396,28 @@
                         <constraints>
                             <constraint firstItem="fEe-zp-On7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="04z-D2-pci"/>
                             <constraint firstItem="dkq-Du-WIQ" firstAttribute="top" secondItem="vJD-qt-ddS" secondAttribute="bottom" constant="8" id="6TA-6C-WZu"/>
-                            <constraint firstItem="vJD-qt-ddS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="Bm2-ri-oFE"/>
                             <constraint firstItem="3P0-0Q-JAF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GNx-jd-MXW"/>
                             <constraint firstItem="dkq-Du-WIQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5Q-Ql-jzX"/>
+                            <constraint firstItem="Whp-Vy-xpG" firstAttribute="top" secondItem="WXF-90-ea3" secondAttribute="bottom" constant="30" id="Wtq-89-v6p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fEe-zp-On7" secondAttribute="bottom" constant="8" id="ZRh-4k-WPd"/>
                             <constraint firstItem="Whp-Vy-xpG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="Zxa-xy-tNf"/>
+                            <constraint firstItem="vJD-qt-ddS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="cnp-Pk-f6z"/>
+                            <constraint firstItem="WXF-90-ea3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="idH-Tb-my6"/>
                             <constraint firstItem="vJD-qt-ddS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m4J-2L-HEO"/>
                             <constraint firstItem="3P0-0Q-JAF" firstAttribute="top" secondItem="dkq-Du-WIQ" secondAttribute="bottom" constant="8" id="ps8-Ia-lgT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Whp-Vy-xpG" secondAttribute="bottom" constant="8" id="xOM-yI-iST"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Playing Card Game" id="ufT-Us-DWO"/>
+                    <navigationItem key="navigationItem" id="CVB-dZ-cYq">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="GdR-n2-xHf">
+                            <connections>
+                                <segue destination="4mz-H0-Lzj" kind="show" id="Hbs-Z2-blP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="scoreLabel" destination="Whp-Vy-xpG" id="rcc-FX-a2q"/>
-                        <outlet property="statusLabel" destination="nJA-Lq-g2h" id="88A-P4-DYP"/>
+                        <outlet property="statusLabel" destination="WXF-90-ea3" id="U9I-cj-Vza"/>
                         <outletCollection property="cardButtons" destination="p2q-lu-g3z" id="DXZ-8O-0k5"/>
                         <outletCollection property="cardButtons" destination="ezt-Sm-uNd" id="Ans-TK-0Ib"/>
                         <outletCollection property="cardButtons" destination="FSM-an-HEB" id="CQq-0R-Ypg"/>
@@ -438,7 +446,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="479"/>
+            <point key="canvasLocation" x="1954" y="479"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aOt-P6-FhN">
+            <objects>
+                <viewController id="4mz-H0-Lzj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jq2-yC-Jcp"/>
+                        <viewControllerLayoutGuide type="bottom" id="IXq-hl-Woe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VRJ-k2-XwI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0I-lf-7TS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2735" y="877"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iqJ-WO-iWb">
@@ -450,7 +476,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ctC-VR-gu0"/>
+                        <segue destination="sni-8S-7Nv" kind="relationship" relationship="viewControllers" id="ctC-VR-gu0"/>
                         <segue destination="z6V-DX-FxS" kind="relationship" relationship="viewControllers" id="V0y-SB-Vbs"/>
                     </connections>
                 </tabBarController>
@@ -658,6 +684,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8f-Yq-sBr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1142" y="1231"/>
+        </scene>
+        <!--Playing Card Game-->
+        <scene sceneID="12I-so-K8D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sni-8S-7Nv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Playing Card Game" id="ufT-Us-DWO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="841-N4-EEq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6b1-if-VZg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDN-Ah-y9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1142" y="479"/>
         </scene>
     </scenes>
     <resources>
