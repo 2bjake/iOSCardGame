@@ -57,15 +57,13 @@
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
-    
-    
-    [self updateStatusLabel];
-    //self.statusLabel.text = self.game.lastStatus;
+    self.statusLabel.attributedText = [self attributedTextForEvent:self.game.lastEvent];
 }
 
-- (void)updateStatusLabel {
-    CardGameEvent *event = self.game.lastEvent;
-    if (event == nil) return;
+- (NSAttributedString *)attributedTextForEvent:(CardGameEvent *)event {
+    if (event == nil) {
+        return [[NSAttributedString alloc] initWithString:@""];
+    }
     NSMutableAttributedString *status = [[NSMutableAttributedString alloc] initWithString:@""];
 
     switch (event.event) {
@@ -90,7 +88,7 @@
             break;
     }
     
-    self.statusLabel.attributedText = status;
+    return status;
 }
 
 - (NSMutableArray *) attributedStringsForCards: (NSArray *)cards {
