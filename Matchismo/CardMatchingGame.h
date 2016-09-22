@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 
+@class CardGameEvent;
+
 @interface CardMatchingGame : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -22,5 +24,5 @@
 @property (nonatomic, readonly) NSInteger score;
 @property (readonly, getter=isStarted) BOOL started;
 @property (nonatomic) NSUInteger matchCount;
-@property (nonatomic, readonly) NSString *lastStatus;
+@property (nonatomic, readonly) CardGameEvent *lastEvent;
 @end

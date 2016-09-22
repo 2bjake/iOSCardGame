@@ -9,6 +9,7 @@
 #import "CardGameViewController.h"
 #import "CardMatchingGame.h"
 #import "PlayingCardDeck.h"
+#import "CardGameEvent.h"
 
 @interface CardGameViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
@@ -44,6 +45,10 @@
     //abstract
 }
 
+- (NSAttributedString *) attributedStringForCard:(Card*)card {
+    return [[NSAttributedString alloc] initWithString:@""]; //abstract
+}
+
 - (void)updateUI {
     for (int i = 0; i < self.cardButtons.count; i++) {
         Card *card = [self.game cardAtIndex:i];
@@ -52,7 +57,71 @@
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
-    self.statusLabel.text = self.game.lastStatus;
+    
+    
+    [self updateStatusLabel];
+    //self.statusLabel.text = self.game.lastStatus;
+}
+
+- (void)updateStatusLabel {
+    CardGameEvent *event = self.game.lastEvent;
+    if (event == nil) return;
+    NSMutableAttributedString *status = [[NSMutableAttributedString alloc] initWithString:@""];
+
+    switch (event.event) {
+        case CGEventCardSelect:
+            status = [self joinAttributedStrings:@[[self attributedStringForCard:event.cards.firstObject], @"selected."]];
+            break;
+        case CGEventCardUnselect:
+            status = [self joinAttributedStrings:@[[self attributedStringForCard:event.cards.firstObject], @"unselected."]];
+            break;
+        case CGEventCardMatch:
+            status = [self joinAttributedStrings:[[[[@[@"Matched"]
+                                                    arrayByAddingObjectsFromArray:[self attributedStringsForCards:event.cards]]
+                                                    arrayByAddingObject:@"for"]
+                                                    arrayByAddingObject:[NSString stringWithFormat:@"%ld", (long)event.points]]
+                                                    arrayByAddingObject:@"points."]];
+            break;
+        case CGEventCardMismatch:
+            status = [self joinAttributedStrings:[[[[self attributedStringsForCards:event.cards]
+                                                    arrayByAddingObject:@"don't match."]
+                                                    arrayByAddingObject:[NSString stringWithFormat:@"%ld", (long)event.points]]
+                                                    arrayByAddingObject:@"point penalty!"]];
+            break;
+    }
+    
+    self.statusLabel.attributedText = status;
+}
+
+- (NSMutableArray *) attributedStringsForCards: (NSArray *)cards {
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    for (Card* card in cards) {
+        [result addObject:[self attributedStringForCard:card]];
+    }
+    return result;
+}
+
+- (NSMutableAttributedString *) joinAttributedStrings:(NSArray *)strings {
+    NSAttributedString *space = [[NSAttributedString alloc] initWithString:@" "];
+    NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:@""];
+    
+    for (int i = 0; i < strings.count; i++) {
+        if (i != 0) {
+            [result appendAttributedString:space];
+        }
+        id string = strings[i];
+        
+        
+        NSAttributedString *newString = [[NSAttributedString alloc] initWithString:@""];
+        if ([string isKindOfClass:[NSString class]]) {
+            newString = [[NSAttributedString alloc] initWithString:string];
+        } else if ([string isKindOfClass:[NSAttributedString class]]) {
+            newString = string;
+        }
+        
+        [result appendAttributedString:newString];
+    }
+    return result;
 }
 
 - (IBAction)touchResetButton:(UIButton *)sender {

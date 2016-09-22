@@ -27,16 +27,18 @@
 - (void)drawCard:(Card *)card onButton:(UIButton *)button {
     UIImage *background = [UIImage imageNamed: (card.isChosen ? @"selectedcardfront" : @"cardfront")];
     [button setBackgroundImage:background forState:UIControlStateNormal];
-    NSAttributedString *content = [self createContentForCard:(SetCard*)card];
+    NSAttributedString *content = [self attributedStringForCard:card];
     [button setAttributedTitle:content forState:UIControlStateNormal];
     button.enabled = !card.isMatched;
 }
 
-- (NSAttributedString *) createContentForCard:(SetCard *)card {
-    NSString *str = [@"" stringByPaddingToLength:card.number withString: [self symbolForCard:card] startingAtIndex:0];
+- (NSAttributedString *) attributedStringForCard:(Card *)card {
+    SetCard *setCard = (SetCard *)card;
+
+    NSString *str = [@"" stringByPaddingToLength:setCard.number withString: [self symbolForCard:setCard] startingAtIndex:0];
     NSMutableAttributedString *astr = [[NSMutableAttributedString alloc] initWithString:str];
     NSRange range = NSMakeRange(0, str.length);
-    [astr setAttributes:[self attributesForCard:card] range:range];
+    [astr setAttributes:[self attributesForCard:setCard] range:range];
     return astr;
 }
 

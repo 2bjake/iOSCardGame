@@ -17,6 +17,7 @@
 
 - (CardMatchingGame *)createGame; //abstract, subclass must implement
 - (void)drawCard:(Card *)card onButton:(UIButton *)button; //abstract, subclass must implement
+- (NSAttributedString *) attributedStringForCard:(Card*)card; //abstract, subclass must implement
 - (void)updateUI;
 
 @end

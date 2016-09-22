@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whp-Vy-xpG">
-                                <rect key="frame" x="28" y="522" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-zp-On7">
                                 <rect key="frame" x="504" y="513" width="84" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -385,8 +379,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O16-nB-dWO">
-                                <rect key="frame" x="61" y="474" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whp-Vy-xpG">
+                                <rect key="frame" x="20" y="517" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJA-Lq-g2h">
+                                <rect key="frame" x="20" y="475" width="405" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -409,7 +409,7 @@
                     <tabBarItem key="tabBarItem" title="Playing Card Game" id="ufT-Us-DWO"/>
                     <connections>
                         <outlet property="scoreLabel" destination="Whp-Vy-xpG" id="rcc-FX-a2q"/>
-                        <outlet property="statusLabel" destination="O16-nB-dWO" id="GdB-z6-AKC"/>
+                        <outlet property="statusLabel" destination="nJA-Lq-g2h" id="88A-P4-DYP"/>
                         <outletCollection property="cardButtons" destination="p2q-lu-g3z" id="DXZ-8O-0k5"/>
                         <outletCollection property="cardButtons" destination="ezt-Sm-uNd" id="Ans-TK-0Ib"/>
                         <outletCollection property="cardButtons" destination="FSM-an-HEB" id="CQq-0R-Ypg"/>
@@ -614,8 +614,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eva-aJ-Fp7">
-                                <rect key="frame" x="-8917" y="9332" width="10000" height="10000"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a49-eX-G2a">
+                                <rect key="frame" x="28" y="478" width="421" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -640,7 +640,7 @@
                     <tabBarItem key="tabBarItem" title="Set Card Game" id="uvB-3J-z2g"/>
                     <connections>
                         <outlet property="scoreLabel" destination="koF-Pn-N5e" id="agN-jo-gJ3"/>
-                        <outlet property="statusLabel" destination="eva-aJ-Fp7" id="5ch-3v-48l"/>
+                        <outlet property="statusLabel" destination="a49-eX-G2a" id="Noo-wP-zGF"/>
                         <outletCollection property="cardButtons" destination="OWh-7e-fzb" id="oAC-mw-DyF"/>
                         <outletCollection property="cardButtons" destination="bvz-ZA-VPU" id="80w-IO-BdA"/>
                         <outletCollection property="cardButtons" destination="lQZ-va-LHu" id="6ac-uI-KPE"/>

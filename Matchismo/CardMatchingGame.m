@@ -7,6 +7,7 @@
 //
 
 #import "CardMatchingGame.h"
+#import "CardGameEvent.h"
 
 @interface CardMatchingGame()
 
@@ -48,9 +49,9 @@ static const int COST_TO_CHOOSE = 1;
         if (!card.isMatched) {
             if (card.isChosen) {
                 card.chosen = NO;
-                _lastStatus = [NSString stringWithFormat:@"%@ unselected", card.contents];
+                [self setLastEventWithCardEvent:CGEventCardUnselect cards:@[card] points:0];
             } else {
-                _lastStatus = [NSString stringWithFormat:@"%@", card.contents];
+                [self setLastEventWithCardEvent:CGEventCardSelect cards:@[card] points:0];
                 if (self.matchCount == 2) {
                     [self matchOneCardToCard:card];
                 } else {
@@ -71,12 +72,12 @@ static const int COST_TO_CHOOSE = 1;
             int matchScore = [card match:@[otherCard]];
             if (matchScore) {
                 int newPoints = matchScore * MATCH_BONUS;
-                _lastStatus = [NSString stringWithFormat:@"Matched %@ and %@ for %d points.", card.contents, otherCard.contents, newPoints];
+                [self setLastEventWithCardEvent:CGEventCardMatch cards:@[card, otherCard] points:newPoints];
                 self.score += newPoints;
                 card.matched = YES;
                 otherCard.matched = YES;
             } else {
-                _lastStatus = [NSString stringWithFormat:@"%@ and %@ don't match. %d point penalty!", card.contents, otherCard.contents, MISMATCH_PENALTY];
+                [self setLastEventWithCardEvent:CGEventCardMismatch cards:@[card, otherCard] points:MISMATCH_PENALTY];
                 self.score -= MISMATCH_PENALTY;
                 otherCard.chosen = NO;
             }
@@ -105,13 +106,13 @@ static const int COST_TO_CHOOSE = 1;
             firstCard.matched = YES;
             secondCard.matched = YES;
             
-            _lastStatus = [NSString stringWithFormat:@"Matched %@, %@ and %@ for %d points.", card.contents, firstCard.contents, secondCard.contents, newPoints];
+            [self setLastEventWithCardEvent:CGEventCardMatch cards:@[card, firstCard, secondCard] points:newPoints];
 
         } else {
             self.score -= MISMATCH_PENALTY;
             firstCard.chosen = NO;
             secondCard.chosen = NO;
-            _lastStatus = [NSString stringWithFormat:@"%@, %@ and %@ don't match. %d point penalty!", card.contents, firstCard.contents, secondCard.contents, MISMATCH_PENALTY];
+            [self setLastEventWithCardEvent:CGEventCardMismatch cards:@[card, firstCard, secondCard] points:MISMATCH_PENALTY];
         }
     }
     
@@ -130,6 +131,10 @@ static const int COST_TO_CHOOSE = 1;
     if (!self.isStarted) {
         _matchCount = matchCount;
     }
+}
+
+- (void)setLastEventWithCardEvent:(CGCardEvent)cardEvent cards:(NSArray*)cards points:(NSInteger)points {
+    _lastEvent = [[CardGameEvent alloc] initWithEvent:cardEvent cards:cards points:points];
 }
 
 @end
