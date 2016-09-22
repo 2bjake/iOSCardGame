@@ -7,6 +7,7 @@
 //
 
 #import "CardGameViewController.h"
+#import "GameHistoryViewController.h"
 #import "CardMatchingGame.h"
 #import "PlayingCardDeck.h"
 #import "CardGameEvent.h"
@@ -57,7 +58,7 @@
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
-    self.statusLabel.attributedText = [self attributedTextForEvent:self.game.lastEvent];
+    self.statusLabel.attributedText = [self attributedTextForEvent:self.game.events.lastObject];
 }
 
 - (NSAttributedString *)attributedTextForEvent:(CardGameEvent *)event {
@@ -129,6 +130,20 @@
 
 - (NSUInteger)cardCount {
     return self.cardButtons.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowHistory"]) {
+        if ([segue.destinationViewController isKindOfClass:[GameHistoryViewController class]]) {
+            GameHistoryViewController *hvc = (GameHistoryViewController *) segue.destinationViewController;
+            
+            NSMutableArray *strings = [[NSMutableArray alloc] init];
+            for (CardGameEvent *event in self.game.events) {
+                [strings addObject:[self attributedTextForEvent:event]];
+            }
+            hvc.history = strings;
+        }
+    }
 }
 
 @end

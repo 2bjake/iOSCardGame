@@ -24,5 +24,5 @@
 @property (nonatomic, readonly) NSInteger score;
 @property (readonly, getter=isStarted) BOOL started;
 @property (nonatomic) NSUInteger matchCount;
-@property (nonatomic, readonly) CardGameEvent *lastEvent;
+@property (nonatomic, readonly) NSArray* events;
 @end

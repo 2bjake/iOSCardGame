@@ -411,7 +411,7 @@
                     <navigationItem key="navigationItem" id="CVB-dZ-cYq">
                         <barButtonItem key="rightBarButtonItem" title="History" id="GdR-n2-xHf">
                             <connections>
-                                <segue destination="4mz-H0-Lzj" kind="show" id="Hbs-Z2-blP"/>
+                                <segue destination="4mz-H0-Lzj" kind="show" identifier="ShowHistory" id="Hbs-Z2-blP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -448,10 +448,10 @@
             </objects>
             <point key="canvasLocation" x="1954" y="479"/>
         </scene>
-        <!--View Controller-->
+        <!--Game History View Controller-->
         <scene sceneID="aOt-P6-FhN">
             <objects>
-                <viewController id="4mz-H0-Lzj" sceneMemberID="viewController">
+                <viewController id="4mz-H0-Lzj" customClass="GameHistoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jq2-yC-Jcp"/>
                         <viewControllerLayoutGuide type="bottom" id="IXq-hl-Woe"/>
@@ -459,12 +459,29 @@
                     <view key="view" contentMode="scaleToFill" id="VRJ-k2-XwI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nKr-cI-yQh">
+                                <rect key="frame" x="28" y="72" width="544" height="471"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nKr-cI-yQh" firstAttribute="top" secondItem="jq2-yC-Jcp" secondAttribute="bottom" constant="8" id="Fpc-6u-LBs"/>
+                            <constraint firstItem="nKr-cI-yQh" firstAttribute="leading" secondItem="VRJ-k2-XwI" secondAttribute="leadingMargin" constant="8" id="SL0-rb-kCt"/>
+                            <constraint firstItem="IXq-hl-Woe" firstAttribute="top" secondItem="nKr-cI-yQh" secondAttribute="bottom" constant="8" id="b0c-sb-6RC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nKr-cI-yQh" secondAttribute="trailing" constant="8" id="wW5-VI-hh3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="nKr-cI-yQh" id="R0q-RY-rrY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0I-lf-7TS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2735" y="877"/>
+            <point key="canvasLocation" x="2779" y="837"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iqJ-WO-iWb">
@@ -477,7 +494,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="sni-8S-7Nv" kind="relationship" relationship="viewControllers" id="ctC-VR-gu0"/>
-                        <segue destination="z6V-DX-FxS" kind="relationship" relationship="viewControllers" id="V0y-SB-Vbs"/>
+                        <segue destination="vSW-rW-Sge" kind="relationship" relationship="viewControllers" id="V0y-SB-Vbs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxn-xf-eW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -513,7 +530,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GFP-WK-Thy">
-                                <rect key="frame" x="196" y="20" width="208" height="96"/>
+                                <rect key="frame" x="196" y="72" width="208" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQZ-va-LHu">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
@@ -545,7 +562,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-tY-ELf">
-                                <rect key="frame" x="196" y="124" width="208" height="96"/>
+                                <rect key="frame" x="196" y="176" width="208" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L6-zg-8NR">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
@@ -580,7 +597,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Sgd-8h-IUc">
-                                <rect key="frame" x="196" y="228" width="208" height="96"/>
+                                <rect key="frame" x="196" y="280" width="208" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePC-Xa-8pI">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
@@ -615,7 +632,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YIn-T8-2bx">
-                                <rect key="frame" x="196" y="332" width="208" height="96"/>
+                                <rect key="frame" x="196" y="384" width="208" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGk-dY-DCY">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="96"/>
@@ -640,8 +657,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a49-eX-G2a">
-                                <rect key="frame" x="28" y="478" width="421" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a49-eX-G2a">
+                                <rect key="frame" x="28" y="492" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -650,20 +667,28 @@
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YIn-T8-2bx" firstAttribute="top" secondItem="Sgd-8h-IUc" secondAttribute="bottom" constant="8" id="6RJ-J8-Zdy"/>
-                            <constraint firstItem="GFP-WK-Thy" firstAttribute="top" secondItem="uPG-Wa-xD1" secondAttribute="topMargin" constant="20" id="7wt-FW-Dg7"/>
                             <constraint firstItem="YIn-T8-2bx" firstAttribute="centerX" secondItem="uPG-Wa-xD1" secondAttribute="centerX" id="JaA-C7-unJ"/>
                             <constraint firstItem="Sgd-8h-IUc" firstAttribute="top" secondItem="MXK-tY-ELf" secondAttribute="bottom" constant="8" id="JlF-E1-mpN"/>
                             <constraint firstItem="koF-Pn-N5e" firstAttribute="leading" secondItem="uPG-Wa-xD1" secondAttribute="leadingMargin" constant="8" id="Ppe-yk-MRx"/>
                             <constraint firstItem="748-co-mrs" firstAttribute="top" secondItem="foP-e7-b3c" secondAttribute="bottom" constant="8" id="QYI-gf-fAP"/>
                             <constraint firstItem="Sgd-8h-IUc" firstAttribute="centerX" secondItem="uPG-Wa-xD1" secondAttribute="centerX" id="Wdm-Ve-D82"/>
                             <constraint firstItem="MXK-tY-ELf" firstAttribute="centerX" secondItem="uPG-Wa-xD1" secondAttribute="centerX" id="ZOp-JA-2Pc"/>
+                            <constraint firstItem="koF-Pn-N5e" firstAttribute="top" secondItem="a49-eX-G2a" secondAttribute="bottom" constant="30" id="cGF-35-8y0"/>
                             <constraint firstItem="MXK-tY-ELf" firstAttribute="top" secondItem="GFP-WK-Thy" secondAttribute="bottom" constant="8" id="cwF-6a-MCZ"/>
                             <constraint firstItem="GFP-WK-Thy" firstAttribute="centerX" secondItem="uPG-Wa-xD1" secondAttribute="centerX" id="eZD-hJ-4bR"/>
+                            <constraint firstItem="a49-eX-G2a" firstAttribute="leading" secondItem="uPG-Wa-xD1" secondAttribute="leadingMargin" constant="8" id="hrz-3a-JRE"/>
                             <constraint firstItem="foP-e7-b3c" firstAttribute="trailing" secondItem="uPG-Wa-xD1" secondAttribute="trailingMargin" constant="8" id="nGv-1L-Qho"/>
                             <constraint firstItem="748-co-mrs" firstAttribute="top" secondItem="koF-Pn-N5e" secondAttribute="bottom" constant="8" id="toJ-1O-Jsa"/>
+                            <constraint firstItem="GFP-WK-Thy" firstAttribute="top" secondItem="noZ-eX-EPB" secondAttribute="bottom" constant="8" id="x3t-A5-0oi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Set Card Game" id="uvB-3J-z2g"/>
+                    <navigationItem key="navigationItem" id="Pkk-T5-ioe">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="LDR-ct-79m">
+                            <connections>
+                                <segue destination="4mz-H0-Lzj" kind="show" identifier="ShowHistory" id="cJS-9b-Nrw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="scoreLabel" destination="koF-Pn-N5e" id="agN-jo-gJ3"/>
                         <outlet property="statusLabel" destination="a49-eX-G2a" id="Noo-wP-zGF"/>
@@ -683,7 +708,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8f-Yq-sBr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="1231"/>
+            <point key="canvasLocation" x="1954" y="1231"/>
         </scene>
         <!--Playing Card Game-->
         <scene sceneID="12I-so-K8D">
@@ -704,8 +729,30 @@
             </objects>
             <point key="canvasLocation" x="1142" y="479"/>
         </scene>
+        <!--Set Card Game-->
+        <scene sceneID="stW-mP-0c8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vSW-rW-Sge" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Set Card Game" id="uvB-3J-z2g"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sy-Yr-4tO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="z6V-DX-FxS" kind="relationship" relationship="rootViewController" id="MMA-nB-SJW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41E-8a-Bo7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1142" y="1231"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cardback" width="64" height="96"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hbs-Z2-blP"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@
 @interface CardMatchingGame()
 
 @property (nonatomic, readwrite) NSInteger score;
+@property (nonatomic, readwrite) NSArray *events;
 @property (nonatomic) NSMutableArray *cards; // of Card
 @end
 
@@ -49,9 +50,9 @@ static const int COST_TO_CHOOSE = 1;
         if (!card.isMatched) {
             if (card.isChosen) {
                 card.chosen = NO;
-                [self setLastEventWithCardEvent:CGEventCardUnselect cards:@[card] points:0];
+                [self addEventWithCardEvent:CGEventCardUnselect cards:@[card] points:0];
             } else {
-                [self setLastEventWithCardEvent:CGEventCardSelect cards:@[card] points:0];
+                [self addEventWithCardEvent:CGEventCardSelect cards:@[card] points:0];
                 if (self.matchCount == 2) {
                     [self matchOneCardToCard:card];
                 } else {
@@ -72,12 +73,12 @@ static const int COST_TO_CHOOSE = 1;
             int matchScore = [card match:@[otherCard]];
             if (matchScore) {
                 int newPoints = matchScore * MATCH_BONUS;
-                [self setLastEventWithCardEvent:CGEventCardMatch cards:@[card, otherCard] points:newPoints];
+                [self addEventWithCardEvent:CGEventCardMatch cards:@[card, otherCard] points:newPoints];
                 self.score += newPoints;
                 card.matched = YES;
                 otherCard.matched = YES;
             } else {
-                [self setLastEventWithCardEvent:CGEventCardMismatch cards:@[card, otherCard] points:MISMATCH_PENALTY];
+                [self addEventWithCardEvent:CGEventCardMismatch cards:@[card, otherCard] points:MISMATCH_PENALTY];
                 self.score -= MISMATCH_PENALTY;
                 otherCard.chosen = NO;
             }
@@ -106,13 +107,13 @@ static const int COST_TO_CHOOSE = 1;
             firstCard.matched = YES;
             secondCard.matched = YES;
             
-            [self setLastEventWithCardEvent:CGEventCardMatch cards:@[card, firstCard, secondCard] points:newPoints];
+            [self addEventWithCardEvent:CGEventCardMatch cards:@[card, firstCard, secondCard] points:newPoints];
 
         } else {
             self.score -= MISMATCH_PENALTY;
             firstCard.chosen = NO;
             secondCard.chosen = NO;
-            [self setLastEventWithCardEvent:CGEventCardMismatch cards:@[card, firstCard, secondCard] points:MISMATCH_PENALTY];
+            [self addEventWithCardEvent:CGEventCardMismatch cards:@[card, firstCard, secondCard] points:MISMATCH_PENALTY];
         }
     }
     
@@ -133,8 +134,14 @@ static const int COST_TO_CHOOSE = 1;
     }
 }
 
-- (void)setLastEventWithCardEvent:(CGCardEvent)cardEvent cards:(NSArray*)cards points:(NSInteger)points {
-    _lastEvent = [[CardGameEvent alloc] initWithEvent:cardEvent cards:cards points:points];
+- (NSArray *)events {
+    if (!_events) _events = [[NSArray alloc] init];
+    return _events;
+}
+
+- (void)addEventWithCardEvent:(CGCardEvent)cardEvent cards:(NSArray*)cards points:(NSInteger)points {
+    CardGameEvent *event = [[CardGameEvent alloc] initWithEvent:cardEvent cards:cards points:points];
+    self.events = [self.events arrayByAddingObject:event];
 }
 
 @end
